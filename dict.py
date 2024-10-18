@@ -12,3 +12,4 @@ customer = {
 
 for i,j in customer.items():
     print(i,j)
+    break
