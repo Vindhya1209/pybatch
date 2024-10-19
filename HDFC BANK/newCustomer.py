@@ -1,4 +1,3 @@
-import customerDetails
 import random as r
 
 while True:
@@ -39,27 +38,3 @@ while True:
         # Automatically set the new customer card for login
         card = newCustomerCard
         print("\nProceeding to login...\n")
-    else:
-        # Existing customer login
-        card = input("Enter Card Number: ")
-
-    # The login block, now used for both new and existing customers
-    for i in customer:
-        if card == i['card']:
-            attempts = 0
-            while attempts < 3:
-                pin = input("Enter Pin: ")
-                if pin == i['pin']:
-                    print("Welcome", i['name'])
-                    balance = i['balance']
-                    name = i["name"]
-                    customerDetails.customerBankDetails(name, card,balance)
-                    break
-                else:
-                    attempts += 1
-                    print("Invalid pin")   
-            else:
-                print("You have exceeded the attempts, Please try after some time")
-            break
-    else:
-        print("Invalid Card Number, Please try again")
